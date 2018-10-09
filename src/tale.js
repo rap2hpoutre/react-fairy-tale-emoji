@@ -22,13 +22,12 @@ export default () => {
   ]);
 
   const animals = shuffle([
-    { name: 'poultry leg', img: '🍗' },
-    { name: 'broccoli', img: '🥦' },
-    { name: 'pretzel', img: '🥨' },
-    { name: 'taco', img: '🌮' },
-    { name: 'hamburger', img: '🍔' },
-    { name: 'bento box', img: '🍱' },
-    { name: 'baby bottle', img: '🍼' },
+    { name: 'gorilla', img: '🦍' },
+    { name: 'wolf', img: '🐺' },
+    { name: 'dragon', img: '🐉' },
+    { name: 'snail', img: '🐌' },
+    { name: 'T-Rex', img: '🦖' },
+    { name: 'rooster', img: '🐓' },
   ]);
 
   return [
@@ -53,7 +52,7 @@ export default () => {
         `One day, ${wordHerHis(s.hero.gender)} mother says: "Take this..."`,
         choices: _s =>
         [foods[0], foods[1]].map(food => ({
-          text: _s => `A ${food.name}`,
+          text: _s => food.name,
           img: _s => food.img,
           state: s => ({
             food,
@@ -65,7 +64,19 @@ export default () => {
       text: s => `The ${s.hero.name} set out immediately to go to her grandmother, who lived in another village.`
     },
     {
-      text: s => `As she was going through the wood, she met with the...`
-    }
+      text: s => `As she was going through the wood, she met with the...`,
+      choices: _s =>
+        [animals[0], animals[1]].map(animal => ({
+          text: _s => animal.name,
+          img: _s => animal.img,
+          state: s => ({
+            animal,
+            story: [...s.story, `As she was going through the wood, she met with the ${animal.name}!`]
+          })
+        }))
+    },
+    {
+      text: s => `The ${s.animal.name} says`
+    },
   ];
 };
