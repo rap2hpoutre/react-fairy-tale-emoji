@@ -64,14 +64,14 @@ export default () => {
       text: s => `The ${s.hero.name} set out immediately to go to her grandmother, who lived in another village.`
     },
     {
-      text: s => `As she was going through the wood, she met with the...`,
+      text: s => `As ${wordSheHe(s.hero.gender)} was going through the wood, ${wordSheHe(s.hero.gender)} met with the...`,
       choices: _s =>
         [animals[0], animals[1]].map(animal => ({
           text: _s => animal.name,
           img: _s => animal.img,
           state: s => ({
             animal,
-            story: [...s.story, `As she was going through the wood, she met with the ${animal.name}!`]
+            story: [...s.story, `As ${wordSheHe(s.hero.gender)} was going through the wood, ${wordSheHe(s.hero.gender)} met with the ${animal.name}!`]
           })
         }))
     },
