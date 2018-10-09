@@ -1,5 +1,5 @@
 import shuffle from 'n-shuffle';
-import { wordHerHis } from './helpers/english';
+import { wordHerHis, wordSheHe } from './helpers/english';
 
 export default () => {
   const heroes = shuffle([
@@ -61,7 +61,7 @@ export default () => {
         }))
     },
     {
-      text: s => `The ${s.hero.name} set out immediately to go to her grandmother, who lived in another village.`
+      text: s => `The ${s.hero.name} set out immediately to go to ${wordHerHis(s.hero.gender)} grandmother, who lived in another village.`
     },
     {
       text: s => `As ${wordSheHe(s.hero.gender)} was going through the wood, ${wordSheHe(s.hero.gender)} met with the...`,
