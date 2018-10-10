@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/react-fairy-tale-emoji/precache-manifest.bd3947a248274f53ea4c09287c2120d2.js"
+  "/react-fairy-tale-emoji/precache-manifest.ed91e9890811ac6b7af06e43d808c356.js"
 );
 
 workbox.clientsClaim();
