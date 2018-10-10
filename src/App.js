@@ -22,11 +22,11 @@ class App extends Component {
     this.setState({ current: this.state.current + 1 });
   };
 
-  story = () => this.state.story.map(s => <p><i>{s}</i></p>);
+  story = () => this.state.story.map(s => <p className="story"><i>{s}</i></p>);
 
   current() {
     if (this.state.current === this.items.length) {
-      return <p className="App-intro">The end.</p>;
+      return <p>The end.</p>;
     }
     const item = this.items[this.state.current];
     const text = item.text(this.state);
@@ -43,7 +43,7 @@ class App extends Component {
     }
     return (
       <div>
-        <p className="App-intro">{text}</p>
+        <p>{text}</p>
         {button}
       </div>
     );
